@@ -1,0 +1,7 @@
+[Style: cinematic, emotional, film score, serious, dramatic, orchestral]
+[Instruments: strings, piano, subtle synth textures, emotional swell]
+[Tempo: 75 BPM, slow build, emotional arc]
+[Voice: deep, slow, serious, male, resonant, contemplative, narration]
+[Mood: philosophical, transformative, profound]
+[Structure: quiet intro 4s -> question 6s -> revelation 6s -> resolution 4s]
+[Duration: 20 seconds]

@@ -1,0 +1,8 @@
+[Style: spa music, meditation, nature sounds, bamboo flute, peaceful, then abrupt change to modern]
+[Tempo: 70 BPM relaxing, then shift to 100 BPM]
+[Instruments: nature sounds, flute, gentle pads -> abrupt stop -> electronic elements]
+[Voice 1: calm, typical spa voice, female, soothing] 
+[Voice 2: realistic, everyday voice, male, dry humor, conversational]
+[Structure: spa intro 5s -> interruption 3s -> explanation 4s -> punchline 3s]
+[Contrast: peaceful to humorous]
+[Duration: 15 seconds]

@@ -1,0 +1,6 @@
+[Style: minimal electronic, ASMR, ambient, dark calm, lo-fi, atmospheric, subtle buzzing, eerie but relaxing, slow tempo 80 BPM]
+[Instruments: synth pads, subtle bass, white noise, Foley sounds, no drums]
+[Voice: calm, confident, slightly provocative, male, whisper-like, close-mic, low volume, no singing, narration]
+[Structure: intro 5s -> verse 10s -> chorus 8s -> outro 7s]
+[Mood: mysterious, scientific, intriguing, avant-garde]
+[Duration: 30 seconds]

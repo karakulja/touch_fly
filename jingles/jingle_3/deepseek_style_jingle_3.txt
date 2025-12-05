@@ -1,0 +1,7 @@
+[Style: ambient, documentary, scientific, cinematic, building tension, atmospheric, NPR-style]
+[Tempo: 90 BPM, steady, gradual build]
+[Instruments: subtle synth textures, soft pads, occasional piano notes, light percussion]
+[Voice: neutral, documentary, female, calm, authoritative like science narrator, no singing]
+[Structure: intro 4s -> statement 6s -> explanation 6s -> payoff 4s]
+[Mood: educational, intriguing, professional]
+[Duration: 20 seconds]
