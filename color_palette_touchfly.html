@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветовая палитра TOUCH×FLY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .color-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .color-swatch {
+            height: 200px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .color-info {
+            padding: 24px;
+        }
+        
+        .color-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .color-role {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .color-codes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .color-code {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f8f8f8;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .color-code-label {
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .color-code-value {
+            color: #1a1a1a;
+        }
+        
+        .usage-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .usage-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .usage-card {
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .usage-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .usage-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .usage-card li {
+            padding: 6px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .usage-card li:before {
+            content: "→ ";
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .reasoning {
+            margin-top: 40px;
+            padding: 32px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            border-left: 4px solid #1a1a1a;
+        }
+        
+        .reasoning h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .reasoning p {
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 12px;
+        }
+        
+        .reasoning strong {
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TOUCH×FLY</h1>
+        <p class="subtitle">Цветовая палитра — лаборатория ощущений</p>
+        
+        <div class="palette-grid">
+            <!-- Основной цвет -->
+            <div class="color-card">
+                <div class="color-swatch" style="background: #1a1a1a;"></div>
+                <div class="color-info">
+                    <div class="color-role">Основной цвет</div>
+                    <div class="color-name">Чёрный лабораторный</div>
+                    <div class="color-codes">
+                        <div class="color-code">
+                            <span class="color-code-label">HEX</span>
+                            <span class="color-code-value">#1a1a1a</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">RGB</span>
+                            <span class="color-code-value">26, 26, 26</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">CMYK</span>
+                            <span class="color-code-value">0, 0, 0, 90</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Дополнительный 1 -->
+            <div class="color-card">
+                <div class="color-swatch" style="background: #f5f1e8;"></div>
+                <div class="color-info">
+                    <div class="color-role">Дополнительный 1</div>
+                    <div class="color-name">Тёплый беж</div>
+                    <div class="color-codes">
+                        <div class="color-code">
+                            <span class="color-code-label">HEX</span>
+                            <span class="color-code-value">#f5f1e8</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">RGB</span>
+                            <span class="color-code-value">245, 241, 232</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">CMYK</span>
+                            <span class="color-code-value">0, 2, 5, 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Дополнительный 2 -->
+            <div class="color-card">
+                <div class="color-swatch" style="background: #d4a574;"></div>
+                <div class="color-info">
+                    <div class="color-role">Дополнительный 2</div>
+                    <div class="color-name">Золотистая кожа</div>
+                    <div class="color-codes">
+                        <div class="color-code">
+                            <span class="color-code-label">HEX</span>
+                            <span class="color-code-value">#d4a574</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">RGB</span>
+                            <span class="color-code-value">212, 165, 116</span>
+                        </div>
+                        <div class="color-code">
+                            <span class="color-code-label">CMYK</span>
+                            <span class="color-code-value">0, 22, 45, 17</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="usage-section">
+            <div class="usage-title">Применение цветов</div>
+            <div class="usage-grid">
+                <div class="usage-card" style="border-left: 4px solid #1a1a1a;">
+                    <h3>Чёрный лабораторный (#1a1a1a)</h3>
+                    <ul>
+                        <li>Логотип TOUCH×FLY</li>
+                        <li>Заголовки и основной текст</li>
+                        <li>Символ × в названии</li>
+                        <li>Навигация сайта</li>
+                        <li>CTA-кнопки (основные)</li>
+                        <li>Рамки и разделители</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-card" style="border-left: 4px solid #f5f1e8;">
+                    <h3>Тёплый беж (#f5f1e8)</h3>
+                    <ul>
+                        <li>Фон сайта</li>
+                        <li>Карточки и блоки контента</li>
+                        <li>Фон для текстовых секций</li>
+                        <li>Подложка под фотографии</li>
+                        <li>Пространство "дыхания"</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-card" style="border-left: 4px solid #d4a574;">
+                    <h3>Золотистая кожа (#d4a574)</h3>
+                    <ul>
+                        <li>Акценты и hover-эффекты</li>
+                        <li>Активные состояния кнопок</li>
+                        <li>Выделение важной информации</li>
+                        <li>Иконки и декоративные элементы</li>
+                        <li>Ссылки при наведении</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reasoning">
+            <h3>Почему именно эти цвета?</h3>
+            
+            <p><strong>Чёрный лабораторный (#1a1a1a)</strong> — основа бренда. Это цвет научности, серьёзности и провокации одновременно. Символ × в названии TOUCH×FLY выглядит максимально графично именно в чёрном. Этот цвет создаёт контраст с традиционными spa-брендами (которые используют пастельные тона) и подчёркивает нашу уникальность. Чёрный также ассоциируется с мухами, делая связь визуально логичной.</p>
+            
+            <p><strong>Тёплый беж (#f5f1e8)</strong> — цвет чистоты, стерильности лаборатории и человеческой кожи одновременно. Это не холодный белый медицинских учреждений, а тёплый, органичный оттенок, который создаёт ощущение комфорта и доверия. Беж смягчает агрессивность чёрного и делает бренд более доступным, несмотря на провокационную концепцию.</p>
+            
+            <p><strong>Золотистая кожа (#d4a574)</strong> — акцентный цвет, который символизирует тепло человеческого тела, прикосновение, тактильность. Это цвет здоровой загорелой кожи, который ассоциируется с приятными ощущениями и расслаблением. Золотистый оттенок добавляет премиальности и делает палитру завершённой, связывая научную строгость чёрного с органичностью бежевого.</p>
+            
+            <p><strong>Общий эффект:</strong> Палитра создаёт баланс между научной серьёзностью (чёрный), чистотой и доверием (беж) и чувственностью (золотистый). Это не типичные spa-цвета, но и не агрессивная палитра. Минималистично, современно, честно — как сам бренд TOUCH×FLY.</p>
+        </div>
+    </div>
+</body>
+</html>
