@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOUCH×FLY — Лаборатория ощущений</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f1e8;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header and Logo */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: #1a1a1a;
+            color: #f5f1e8;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .logo-touch {
+            display: inline-block;
+        }
+
+        .logo-cross {
+            display: inline-block;
+            font-size: 52px;
+            margin: 0 4px;
+            transform-origin: center;
+            animation: none;
+        }
+
+        .logo-cross.animate {
+            animation: flyAroundExtended 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .logo-fly {
+            display: inline-block;
+            position: relative;
+        }
+
+        @keyframes flyAroundExtended {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 1;
+            }
+            15% {
+                transform: translate(100px, -50px) rotate(90deg) scale(1.2);
+                opacity: 1;
+            }
+            30% {
+                transform: translate(120px, 30px) rotate(180deg) scale(1.3);
+                opacity: 0.9;
+            }
+            45% {
+                transform: translate(200px, -80px) rotate(270deg) scale(1.5);
+                opacity: 0.7;
+            }
+            60% {
+                transform: translate(300px, 100px) rotate(360deg) scale(1.8);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translate(150px, -100px) rotate(450deg) scale(1.4);
+                opacity: 0.6;
+            }
+            90% {
+                transform: translate(50px, 20px) rotate(520deg) scale(1.1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translate(0, 0) rotate(720deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tagline {
+            font-size: 18px;
+            margin-top: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: #d4a574;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .section-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #d4a574;
+            font-weight: 600;
+        }
+
+        /* Image Sections */
+        .image-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .image-section.reverse {
+            direction: rtl;
+        }
+
+        .image-section.reverse > * {
+            direction: ltr;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        /* Facts List */
+        .facts-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .facts-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 17px;
+        }
+
+        .facts-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+            font-weight: 700;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #1a1a1a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .price-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .price-details {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .price-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d4a574;
+            margin-bottom: 16px;
+        }
+
+        /* Steps */
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 24px 0;
+            padding-left: 60px;
+            position: relative;
+            font-size: 18px;
+            border-left: 2px solid #d4a574;
+            margin-left: 20px;
+        }
+
+        .steps-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            background: #d4a574;
+            color: #1a1a1a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .faq-answer {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #1a1a1a;
+            color: #f5f1e8;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-image {
+            max-width: 600px;
+            width: 100%;
+            margin: 40px auto;
+            border-radius: 12px;
+        }
+
+        .contact-info {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .contact-link {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #f5f1e8;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #d4a574;
+            color: #1a1a1a;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 32px;
+        }
+
+        .cta-button:hover {
+            background: #1a1a1a;
+            color: #d4a574;
+            transform: scale(1.05);
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background: #1a1a1a;
+            color: #f5f1e8;
+        }
+
+        .dark-section .section-text {
+            color: #f5f1e8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .image-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-list li {
+                padding-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo" id="logo">
+            <span class="logo-touch">TOUCH</span><span class="logo-cross" id="cross">×</span><span class="logo-fly">FLY</span>
+        </div>
+        <div class="tagline">Лаборатория ощущений</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section-hero">
+        <h1 class="section-title">ВЫ БОИТЕСЬ МУХ. МЫ ЭТО ЗНАЕМ.</h1>
+        <p class="section-text">Именно поэтому вы должны попробовать.</p>
+        <p class="section-text">Самый странный массаж в мире — и самый честный. Никаких "энергетических потоков", никакой эзотерики. Просто стерильные мухи-нектарофаги, научная лаборатория и ощущения, которых у вас никогда не было.</p>
+        <p class="section-text"><strong>Это не для всех. Это для тех, кто готов.</strong></p>
+    </section>
+
+    <!-- Fear Section with Image -->
+    <section>
+        <div class="image-section">
+            <div class="section-content">
+                <h2 class="section-title">О ЧЁМ ЭТО</h2>
+                <p class="section-text">Представьте: от 1 до 5 мух ползают по вашей коже. Их лапки микроскопические, движения непредсказуемые, прикосновения — как электрические разряды нежности. Щекотно. Странно. Гипнотично.</p>
+                <p class="section-text"><strong class="highlight">Факты без прикрас:</strong></p>
+                <ul class="facts-list">
+                    <li>Мухи выращены на специализированной ферме</li>
+                    <li>Живут в лабораторных условиях под надзором энтомологов</li>
+                    <li>Полностью стерильны — заражение исключено</li>
+                    <li>Питаются только нектаром (отсюда название — нектарофаги)</li>
+                    <li>Перед сеансом на тело наносится привлекающий состав — мухи знают, куда ползти</li>
+                </ul>
+            </div>
+            <img src="public/images/face-with-fly.png" alt="Лицо с мухой" class="section-image">
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="dark-section">
+        <h2 class="section-title">ЗАЧЕМ ЭТО НУЖНО</h2>
+        <p class="section-text">Потому что вы устали от обычного.</p>
+        <p class="section-text">Потому что "расслабляющий массаж с лавандой" — это скучно.</p>
+        <p class="section-text">Потому что иногда нужно делать то, о чём будешь рассказывать на вечеринках следующие пять лет.</p>
+        <p class="section-text"><strong class="highlight">Это не терапия. Это опыт.</strong> Чистый, странный, научно обоснованный опыт сенсорной перегрузки.</p>
+    </section>
+
+    <!-- How It Works Section with Image -->
+    <section>
+        <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">КАК ЭТО РАБОТАЕТ</h2>
+        <div class="image-section reverse">
+            <img src="public/images/massage-with-flies.png" alt="Массаж с мухами" class="section-image">
+            <div class="section-content">
+                <ol class="steps-list">
+                    <li><strong>Консультация</strong> — мы объясняем процесс, показываем лабораторию (да, можно посмотреть на мух заранее)</li>
+                    <li><strong>Нанесение состава</strong> — на выбранные зоны тела наносится безопасная смесь, привлекающая мух</li>
+                    <li><strong>Сеанс</strong> — мухи делают своё дело, вы — своё (дышите, концентрируйтесь, смеётесь или молчите)</li>
+                    <li><strong>Душ</strong> — смываете состав, приходите в себя</li>
+                    <li><strong>Рефлексия</strong> — по желанию можем обсудить ощущения</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="dark-section">
+        <h2 class="section-title">НАУКА И БЕЗОПАСНОСТЬ</h2>
+        <p class="section-text">Мы не шарлатаны. Мы не продаём "исцеление" или "очищение чакр".</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px;">
+            <div>
+                <p class="section-text"><strong class="highlight">Что у нас есть:</strong></p>
+                <ul class="facts-list">
+                    <li>Сертифицированная энтомологическая лаборатория</li>
+                    <li>Протоколы стерилизации и карантина для каждой партии мух</li>
+                    <li>Ветеринарный контроль</li>
+                    <li>Гипоаллергенный привлекающий состав (протестирован дерматологически)</li>
+                </ul>
+            </div>
+            <div>
+                <p class="section-text"><strong class="highlight">Чего у нас нет:</strong></p>
+                <ul class="facts-list">
+                    <li>Медицинских показаний</li>
+                    <li>Лечебного эффекта</li>
+                    <li>Обещаний "омоложения"</li>
+                </ul>
+                <p class="section-text" style="margin-top: 20px;">Это сенсорная процедура. Экзотика. Эксперимент над собственными границами комфорта.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section>
+        <h2 class="section-title" style="text-align: center;">ЦЕНЫ</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-title">"Первый контакт"</div>
+                <div class="price-details">1 муха, 5 минут</div>
+                <div class="price-amount">3 000 ₽</div>
+                <p>Для тех, кто не уверен, но любопытен.</p>
+            </div>
+            <div class="price-card">
+                <div class="price-title">"Стандартный рой"</div>
+                <div class="price-details">3 мухи, 15 минут</div>
+                <div class="price-amount">5 500 ₽</div>
+                <p>Наш хит. Достаточно, чтобы понять всю глубину ощущений.</p>
+            </div>
+            <div class="price-card">
+                <div class="price-title">"Полное погружение"</div>
+                <div class="price-details">5 мух, 30 минут</div>
+                <div class="price-amount">9 000 ₽</div>
+                <p>Для смелых. Для тех, кто хочет историю на всю жизнь.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="dark-section">
+        <h2 class="section-title">ЧАСТЫЕ ВОПРОСЫ</h2>
+        <div class="faq-item">
+            <div class="faq-question">Это безопасно?</div>
+            <div class="faq-answer">Да. Научная лаборатория, стерильные условия, контроль энтомологов.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Это больно?</div>
+            <div class="faq-answer">Нет. Это щекотно и странно, но не больно.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">А если я передумаю во время сеанса?</div>
+            <div class="faq-answer">Останавливаем немедленно. Без вопросов, без доплат.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Можно сфотографировать?</div>
+            <div class="faq-answer">Да, но только после подписания согласия. Мухи — не актёры.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Это легально?</div>
+            <div class="faq-answer">Абсолютно. У нас все разрешения.</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="section-title">ЗАПИСАТЬСЯ</h2>
+        <p class="section-text">Мы не для всех. Если вы дочитали до сюда — возможно, вы для нас.</p>
+        <img src="public/images/location.png" alt="Локация TOUCH×FLY" class="contact-image">
+        <div class="contact-info">
+            <strong>Telegram:</strong> <a href="https://t.me/touchflylab" class="contact-link">@touchflylab</a>
+        </div>
+        <div class="contact-info">
+            <strong>Адрес:</strong> Аллея Мухова, 17
+        </div>
+        <p class="section-text" style="margin-top: 40px;">Сеансы по предварительной записи. Мы маленькие, мы странные, и мы гордимся этим.</p>
+        <a href="https://t.me/touchflylab" class="cta-button">ЗАПИСАТЬСЯ СЕЙЧАС</a>
+    </section>
+
+    <!-- JavaScript for Animation -->
+    <script>
+        // Trigger animation on page load
+        window.addEventListener('load', function() {
+            const cross = document.getElementById('cross');
+            cross.classList.add('animate');
+        });
+
+        // Trigger animation on logo hover
+        const logo = document.getElementById('logo');
+        const cross = document.getElementById('cross');
+        
+        logo.addEventListener('mouseenter', function() {
+            cross.classList.remove('animate');
+            // Force reflow to restart animation
+            void cross.offsetWidth;
+            cross.classList.add('animate');
+        });
+    </script>
+</body>
+</html>
